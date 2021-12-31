@@ -1,5 +1,4 @@
 function search(array, val) {
- 
   let min = 0;
   let max = array.length - 1;
 
@@ -21,4 +20,4 @@ function search(array, val) {
   return -1;
 }
 
-search([1,2,3,4,5,6],11)
+search([1,2,3,4,5,6,8,11],11)
