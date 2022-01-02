@@ -1,10 +1,10 @@
 function takeShower(){
-    return "Showering!"
+    return console.log("Showering!")
 }
 
 function eatBreakfast(){
     let meal = cookFood()
-    return `Eating ${meal}`
+    return console.log(`Eating ${meal}`)
 }
 
 function cookFood(){
