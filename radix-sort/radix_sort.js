@@ -1,3 +1,4 @@
+// Helper functions ↓
 function getDigit(num, i) {
   return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10;
 }
@@ -14,6 +15,7 @@ function mostDigits(nums) {
   }
   return maxDigits;
 }
+// Helper functions ↑
 
 function radixSort(nums){
     let maxDigitCount = mostDigits(nums);
@@ -28,7 +30,7 @@ function radixSort(nums){
     return nums;
 }
 
-radixSort([23,345,5467,12,2345,9852])
+console.log(radixSort([23,345,5467,12,2345,9852]))
 
 
 
