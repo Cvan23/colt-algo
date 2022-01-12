@@ -20,4 +20,4 @@ function search(array, val) {
   return -1;
 }
 
-search([1,2,3,4,5,6,8,11],11)
+console.log(search([1,2,3,4,5,6,8,11],11));
