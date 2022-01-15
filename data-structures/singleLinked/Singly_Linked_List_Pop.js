@@ -1,3 +1,5 @@
+// POP(): Removing a NODE from the end of the list
+
 class Node{
     constructor(val){
         this.val = val;
@@ -23,6 +25,8 @@ class SinglyLinkedList{
         this.length++;
         return this;
     }
+
+// To remove a node from the end of the list, we need to be able to traverse the whole list
     pop(){
         if(!this.head) return undefined;
         var current = this.head;

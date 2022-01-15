@@ -1,3 +1,5 @@
+// Adding a NODE to end of the list
+
 class Node{
     constructor(val){
         this.val = val;
