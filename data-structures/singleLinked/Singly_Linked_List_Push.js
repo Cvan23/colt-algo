@@ -13,6 +13,7 @@ class SinglyLinkedList{
     }
     push(val){
         var newNode = new Node(val);
+        // ↓ Edge Case if list is empty
         if(!this.head){
             this.head = newNode;
             this.tail = this.head;

@@ -8,7 +8,7 @@ Linked Lists consist of **nodes**, and each node has a **value** and a **pointer
 [Singly Linked Lists](https://cs.slides.com/colt_steele/singly-linked-lists#/3)
 
 Like a train car; A Linked List is a bunch of nodes connected together.
-We have node list before for traverseing the DOM
+We have worked with node lists before for traverseing the DOM
 
 ## H2 Comparisons with Arrays
 
