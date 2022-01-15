@@ -1,3 +1,5 @@
+// UNSHIFT(): Adding new NODE to the beginning of a list.
+
 class Node{
     constructor(val){
         this.val = val;
@@ -11,6 +13,7 @@ class SinglyLinkedList{
         this.tail = null;
         this.length = 0;
     }
+
     push(val){
         var newNode = new Node(val);
         if(!this.head){
@@ -23,6 +26,7 @@ class SinglyLinkedList{
         this.length++;
         return this;
     }
+
     pop(){
         if(!this.head) return undefined;
         var current = this.head;
@@ -40,6 +44,7 @@ class SinglyLinkedList{
         }
         return current;
     }
+
     shift(){
         if(!this.head) return undefined;
         var currentHead = this.head;
@@ -50,8 +55,10 @@ class SinglyLinkedList{
         }
         return currentHead;
     }
+// Similar code pattern for PUSH()
     unshift(val){
         var newNode = new Node(val);
+//      ↓ Edge case if list is empty
         if(!this.head) {
             this.head = newNode;
             this.tail = this.head;
