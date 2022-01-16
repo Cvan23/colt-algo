@@ -1,3 +1,5 @@
+// REMOVE(): Removing a node from a SPECIFIC position in the list
+
 class Node{
     constructor(val){
         this.val = val;
@@ -11,6 +13,7 @@ class SinglyLinkedList{
         this.tail = null;
         this.length = 0;
     }
+
     push(val){
         var newNode = new Node(val);
         if(!this.head){
@@ -23,6 +26,7 @@ class SinglyLinkedList{
         this.length++;
         return this;
     }
+
     pop(){
         if(!this.head) return undefined;
         var current = this.head;
@@ -40,6 +44,7 @@ class SinglyLinkedList{
         }
         return current;
     }
+
     shift(){
         if(!this.head) return undefined;
         var currentHead = this.head;
@@ -50,6 +55,7 @@ class SinglyLinkedList{
         }
         return currentHead;
     }
+
     unshift(val){
         var newNode = new Node(val);
         if(!this.head) {
@@ -61,6 +67,7 @@ class SinglyLinkedList{
         this.length++;
         return this;
     }
+
     get(index){
         if(index < 0 || index >= this.length) return null;
         var counter = 0;
@@ -71,6 +78,7 @@ class SinglyLinkedList{
         }
         return current;
     }
+
     set(index, val){
         var foundNode = this.get(index);
         if(foundNode){
@@ -79,6 +87,7 @@ class SinglyLinkedList{
         }
         return false;
     }
+
     insert(index, val){
         if(index < 0 || index > this.length) return false;
         if(index === this.length) return !!this.push(val);
@@ -92,10 +101,12 @@ class SinglyLinkedList{
         this.length++;
         return true;
     }
+// REMOVE calls on 3 previous methods as helper functions: SHIFT, POP and GET
     remove(index){
         if(index < 0 || index >= this.length) return undefined;
         if(index === 0) return this.shift();
         if(index === this.length - 1) return this.pop();
+        
         var previousNode = this.get(index - 1);
         var removed = previousNode.next;
         previousNode.next = removed.next;

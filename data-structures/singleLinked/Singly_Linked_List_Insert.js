@@ -1,3 +1,5 @@
+// INSERT(): Adding a node to the list at a SPECIFIC position 
+
 class Node{
     constructor(val){
         this.val = val;
@@ -11,6 +13,7 @@ class SinglyLinkedList{
         this.tail = null;
         this.length = 0;
     }
+
     push(val){
         var newNode = new Node(val);
         if(!this.head){
@@ -23,6 +26,7 @@ class SinglyLinkedList{
         this.length++;
         return this;
     }
+
     pop(){
         if(!this.head) return undefined;
         var current = this.head;
@@ -40,6 +44,7 @@ class SinglyLinkedList{
         }
         return current;
     }
+
     shift(){
         if(!this.head) return undefined;
         var currentHead = this.head;
@@ -50,6 +55,7 @@ class SinglyLinkedList{
         }
         return currentHead;
     }
+
     unshift(val){
         var newNode = new Node(val);
         if(!this.head) {
@@ -61,6 +67,7 @@ class SinglyLinkedList{
         this.length++;
         return this;
     }
+
     get(index){
         if(index < 0 || index >= this.length) return null;
         var counter = 0;
@@ -71,6 +78,7 @@ class SinglyLinkedList{
         }
         return current;
     }
+
     set(index, val){
         var foundNode = this.get(index);
         if(foundNode){
@@ -79,6 +87,7 @@ class SinglyLinkedList{
         }
         return false;
     }
+// INSERT calls on 3 previous methods as helper functions: PUSH, UNSHIFT and GET
     insert(index, val){
         if(index < 0 || index > this.length) return false;
         if(index === this.length) return !!this.push(val);
