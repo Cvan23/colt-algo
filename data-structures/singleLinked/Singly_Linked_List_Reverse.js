@@ -1,3 +1,5 @@
+// REVERSE: Reversing the list IN PLACE
+
 class Node{
     constructor(val){
         this.val = val;
@@ -11,6 +13,7 @@ class SinglyLinkedList{
         this.tail = null;
         this.length = 0;
     }
+
     push(val){
         var newNode = new Node(val);
         if(!this.head){
@@ -23,6 +26,7 @@ class SinglyLinkedList{
         this.length++;
         return this;
     }
+
     pop(){
         if(!this.head) return undefined;
         var current = this.head;
@@ -40,6 +44,7 @@ class SinglyLinkedList{
         }
         return current;
     }
+
     shift(){
         if(!this.head) return undefined;
         var currentHead = this.head;
@@ -50,6 +55,7 @@ class SinglyLinkedList{
         }
         return currentHead;
     }
+
     unshift(val){
         var newNode = new Node(val);
         if(!this.head) {
@@ -61,6 +67,7 @@ class SinglyLinkedList{
         this.length++;
         return this;
     }
+
     get(index){
         if(index < 0 || index >= this.length) return null;
         var counter = 0;
@@ -71,6 +78,7 @@ class SinglyLinkedList{
         }
         return current;
     }
+
     set(index, val){
         var foundNode = this.get(index);
         if(foundNode){
@@ -79,6 +87,7 @@ class SinglyLinkedList{
         }
         return false;
     }
+
     insert(index, val){
         if(index < 0 || index > this.length) return false;
         if(index === this.length) return !!this.push(val);
@@ -92,6 +101,7 @@ class SinglyLinkedList{
         this.length++;
         return true;
     }
+    
     remove(index){
         if(index < 0 || index >= this.length) return undefined;
         if(index === 0) return this.shift();
@@ -102,20 +112,22 @@ class SinglyLinkedList{
         this.length--;
         return removed;
     }
+
     reverse(){
-      var node = this.head;
-      this.head = this.tail;
-      this.tail = node;
-      var next;
-      var prev = null;
-      for(var i = 0; i < this.length; i++){
-        next = node.next;
-        node.next = prev;
-        prev = node;
-        node = next;
-      }
-      return this;
+        var node = this.head;
+        this.head = this.tail;
+        this.tail = node;
+        var next;
+        var prev = null;
+        for(var i = 0; i < this.length; i++){
+            next = node.next;
+            node.next = prev;
+            prev = node;
+            node = next;
+        }
+        return this;
     }
+// ↓ PRINT() method below is a helper function to better visualize testing for our REVERSE() method 
     print(){
         var arr = [];
         var current = this.head
